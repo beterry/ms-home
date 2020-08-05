@@ -1,0 +1,48 @@
+@import './colors';
+
+@mixin button{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: .875rem;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .button-icon{
+    @include button;
+    background: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    transition: transform .35s;
+    svg{
+      flex-shrink: 0;
+    }
+  }
+  
+  .button-contained{
+    @include button;
+    min-height: 2.25rem;
+    min-width: 4rem;
+    border-radius: .25rem;
+    padding: 0 1rem;
+    color: white;
+  }
+
+  .button-contained:hover{
+    filter: brightness(120%);
+  }
+  
+  .button-text{
+    @include button;
+    background: none;
+    min-height: 2.25rem;
+    min-width: 4rem;
+    border-radius: .25rem;
+    padding: 0 1rem;
+  }

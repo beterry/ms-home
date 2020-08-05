@@ -1,0 +1,49 @@
+@import './colors';
+
+p{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.45rem;
+    max-width: 37.5rem;
+}
+
+h1{
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+h2{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+h3{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+h4{
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+h5{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.caption{
+    font-size: .75rem;
+    line-height: 1rem;
+    color: $gray-50;
+}
+
+a{
+    font-size: .875rem;
+}
