@@ -6,6 +6,7 @@ const Section = styled.section`
     margin: 3.75rem 0;
     padding: ${props => props.bk ? '3.75rem 0' : null};
     background: ${props => props.bk || 'none'};
+    position: relative;
 `
 
 const Wrapper = styled.div`

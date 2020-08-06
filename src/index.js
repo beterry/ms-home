@@ -11,6 +11,7 @@ import Text from './components/text'
 import Service from './components/service'
 import Testimonial from './components/testimonial'
 import Resource from './components/resource'
+import ProductGallery from './components/product-gallery'
 
 //import layouts
 import Section from './layout/section'
@@ -116,6 +117,9 @@ function App() {
             ]}
           />
         </Grid>
+      </Section>
+      <Section title='Stand Out in the Mailbox' subtitle='Our Products'>
+        <ProductGallery />
       </Section>
       <Section title='What Our Customers Say' subtitle='Testimonials'>
         <Grid columns={3}>
