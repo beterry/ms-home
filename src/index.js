@@ -13,6 +13,9 @@ import Testimonial from './components/testimonial'
 import Resource from './components/resource'
 import ProductGallery from './components/product-gallery'
 
+//import sections
+import TrustLogos from './sections/trust-logos'
+
 //import layouts
 import Section from './layout/section'
 import Grid from './layout/grid'
@@ -121,6 +124,8 @@ function App() {
       <Section title='Stand Out in the Mailbox' subtitle='Our Products'>
         <ProductGallery />
       </Section>
+      <TrustLogos />
+      {/* <NoMoneyDownCTA /> */}
       <Section title='What Our Customers Say' subtitle='Testimonials'>
         <Grid columns={3}>
             <Testimonial
