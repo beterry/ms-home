@@ -10,6 +10,7 @@ import Step from './components/step'
 import Text from './components/text'
 import Service from './components/service'
 import Testimonial from './components/testimonial'
+import Resource from './components/resource'
 
 //import layouts
 import Section from './layout/section'
@@ -19,9 +20,15 @@ import Grid from './layout/grid'
 import weekIcon from './images/icon-week.svg'
 import moneyIcon from './images/icon-money.svg'
 import designIcon from './images/icon-design.svg'
+
 import terryMckim from './images/terry-mckim@2x.jpg'
 import anthonySottasante from './images/anthony-sottasante@2x.jpg'
 import billBrown from './images/bill-brown@2x.jpg'
+
+import resource1 from './images/eddm-guide-auto.jpg'
+import resource2 from './images/scratch-postcards.jpg'
+import resource3 from './images/advertising-pop.jpg'
+import resource4 from './images/bottom-feeders.jpg'
 
 //import colors
 import colors from './styles/colors'
@@ -129,6 +136,38 @@ function App() {
               copy='The staff at Mail Shark is nothing but professional. Kevin, Liz in the art department, everybody has been extremely helpful. And we plan on using Mail Shark for years to come. We also get a lot of secondary printing done from them. They are very fast, very efficient, very convenient. It’s an all around great experience with them.'
               name='Bill Brown'
               business={`Fox's Pizza Den`}
+            />
+        </Grid>
+      </Section>
+      <Section title='We are Direct Mail Experts' subtitle='resources'>
+        <Grid columns={4}>
+            <Resource
+              image={resource1}
+              title='The EDDM Guide for Auto Repair Shops'
+              cat='EDDM® Basics'
+              time={10}
+              link=''
+            />
+            <Resource
+              image={resource2}
+              title='Scratch-Off Postcards Gain Attention'
+              cat='Tips & advice'
+              time={7}
+              link=''
+            />
+            <Resource
+              image={resource3}
+              title='How to Make Your Postcard Advertising Pop'
+              cat='Best practices'
+              time={5}
+              link=''
+            />
+            <Resource
+              image={resource4}
+              title='“The Bottom Feeder” Customer'
+              cat='Tips & advice'
+              time={10}
+              link=''
             />
         </Grid>
       </Section>
