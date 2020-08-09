@@ -5,8 +5,6 @@ import './styles/normalize.css'
 import './styles/index.scss';
 
 //import components
-import Step from './components/step'
-import Text from './components/text'
 import Service from './components/service'
 import Testimonial from './components/testimonial'
 import Resource from './components/resource'
@@ -16,6 +14,7 @@ import ProductGallery from './components/product-gallery'
 import WhyMS from './sections/why-ms'
 import TrustLogos from './sections/trust-logos'
 import NoMoneyDownCTA from './sections/no-money-down-cta'
+import HowItWorks from './sections/how-it-works'
 
 //import layouts
 import Padding from './layout/padding'
@@ -28,39 +27,20 @@ import anthonySottasante from './images/anthony-sottasante@2x.jpg'
 import billBrown from './images/bill-brown@2x.jpg'
 
 import resource1 from './images/eddm-guide-auto.jpg'
-import resource2 from './images/scratch-postcards.jpg'
-import resource3 from './images/advertising-pop.jpg'
-import resource4 from './images/bottom-feeders.jpg'
+import resource2 from './images/eddm-guide-auto.jpg'
+import resource3 from './images/eddm-guide-auto.jpg'
+import resource4 from './images/eddm-guide-auto.jpg'
 
 //import colors
-import colors from './styles/colors'
+// import colors from './styles/colors'
 
 function App() {
   return (
     <>
-      <Padding size='section'/>
+      <Padding/>
       <WhyMS />
-      <Section title='The Easiest Way to Mail' subtitle='How it works' bk={colors.gray[5]}>
-        <Grid columns={3}>
-          <Step number={1} title='Choose a Product'>
-            <Text>Happy to hear you decided on using Mail Shark to reach your marketing goals! What product would you like to mail?</Text>
-            <Text blue>I think an oversized postcard would really stand out in the mailbox.</Text>
-            <Text>You bet! That’s our most popular product with a proven track record of success.</Text>
-          </Step>
-          <Step number={2} title='Choose a Mailing Area'>
-            <Text>Do you have an idea whether you want to target a specific audience or blanket the area around your business?</Text>
-            <Text blue>What would you suggest?</Text>
-            <Text>In your industry, at your budget, we’ve had great response rates doing a 5,000 address targeted mailing.</Text>
-            <Text blue><span role="img" aria-label='thumbs up'>&#128077;</span></Text>
-          </Step>
-          <Step number={3} title='Choose a Schedule'>
-            <Text>Final question: when would you like to start mailing and how many weeks would you like to mail and pay over?</Text>
-            <Text blue>Lets start July 3rd for 8 weeks.</Text>
-            <Text>Great plan. That means we will mail 625 postcards per week and bill you $269 per week for 8 weeks.</Text>
-            <Text>You're all set! <span role="img" aria-label='mailbox'>&#128235;</span></Text>
-          </Step>
-        </Grid>
-      </Section>
+      <Padding size='1/2'/>
+      <HowItWorks />
       <Section title='Custom Direct Mail Solutions' subtitle='Our Services'>
         <Grid columns={3}>
           <Service

@@ -9,6 +9,8 @@ const Padding = styled.div`
             return '2.5rem'
         case 'l': 
             return '4rem'
+        case '1/2':
+          return '3.25rem'
         default:
             return '6.5rem'
     }
