@@ -1,10 +1,10 @@
 const brandColors = {
     p: {
-        900: "#002a42",
+        900: "#002a42", //primary
         800: "#163e5a"
     },
     s: {
-        600: "#ff8c00"
+        600: "#ff8c00" //secondary
     },
     c: {
         900: "#0e5296",

@@ -5,7 +5,6 @@ import './styles/normalize.css'
 import './styles/index.scss';
 
 //import components
-import Diff from './components/diff'
 import Step from './components/step'
 import Text from './components/text'
 import Service from './components/service'
@@ -14,17 +13,16 @@ import Resource from './components/resource'
 import ProductGallery from './components/product-gallery'
 
 //import sections
+import WhyMS from './sections/why-ms'
 import TrustLogos from './sections/trust-logos'
+import NoMoneyDownCTA from './sections/no-money-down-cta'
 
 //import layouts
+import Padding from './layout/padding'
 import Section from './layout/section'
 import Grid from './layout/grid'
 
 //import images
-import weekIcon from './images/icon-week.svg'
-import moneyIcon from './images/icon-money.svg'
-import designIcon from './images/icon-design.svg'
-
 import terryMckim from './images/terry-mckim@2x.jpg'
 import anthonySottasante from './images/anthony-sottasante@2x.jpg'
 import billBrown from './images/bill-brown@2x.jpg'
@@ -40,25 +38,8 @@ import colors from './styles/colors'
 function App() {
   return (
     <>
-      <Section subtitle='Why Mail Shark?' title='We Do Direct Mail Differently'>
-        <Grid columns={3} >
-          <Diff
-            icon={weekIcon}
-            title='Mail and Pay Weekly'
-            copy='We take the total number of mail pieces, as well as the total cost of your campaign, and spread them out evenly over a period of weeks or months. You can then rely on a steadier, more predictable return over time, instead of a rush of new business all at once.'
-          />
-          <Diff
-            icon={moneyIcon}
-            title='No Money Down'
-            copy='We finance the cost of your market analysis, mailing list, artwork, printing, postal sorting, and delivery. You don’t pay a dime until we pay the post office for your first week’s mailing.'
-          />
-          <Diff
-            icon={designIcon}
-            title='Free Professional Design'
-            copy='Free custom design and unlimited revisions come standard with our Full-Service, EDDM®, and Print Only options. Our team of graphic designers have the skills and expertise to create compelling pieces that get results.'
-          />
-        </Grid>
-      </Section>
+      <Padding size='section'/>
+      <WhyMS />
       <Section title='The Easiest Way to Mail' subtitle='How it works' bk={colors.gray[5]}>
         <Grid columns={3}>
           <Step number={1} title='Choose a Product'>
@@ -125,7 +106,7 @@ function App() {
         <ProductGallery />
       </Section>
       <TrustLogos />
-      {/* <NoMoneyDownCTA /> */}
+      <NoMoneyDownCTA />
       <Section title='What Our Customers Say' subtitle='Testimonials'>
         <Grid columns={3}>
             <Testimonial

@@ -11,6 +11,7 @@ import midas from '../images/trust-logos/midas.svg'
 import papa from '../images/trust-logos/papa.svg'
 import mikes from '../images/trust-logos/mikes.svg'
 
+//logo store
 const logos = [
     {
         company: 'Marcos Pizza',
@@ -34,7 +35,25 @@ const logos = [
     }
 ]
 
-const Container = styled.section`
+export default function TrustLogos() {
+    return (
+        <Section>
+            <Rule />
+            <ContentWrapper>
+                <p>They trust Mail Shark</p>
+                <LogoWrapper>
+                    {logos.map((trust, index) => 
+                        <Logo src={trust.logo} alt={trust.company} key={index} />
+                    )}
+                </LogoWrapper>
+            </ContentWrapper>
+        </Section>
+    )
+}
+
+//styles-----------------------------------------
+
+const Section = styled.section`
     width: 90%;
     max-width: 100rem;
     margin: 0 auto;
@@ -65,24 +84,9 @@ const LogoWrapper = styled.div`
     align-items: center;
     flex-wrap: wrap;
     opacity: .4;
+    margin-bottom: 2.5rem;
 `
 
 const Logo = styled.img`
     margin: 0 2rem;
 `
-
-export default function TrustLogos() {
-    return (
-        <Container>
-            <Rule />
-            <ContentWrapper>
-                <p>They trust Mail Shark</p>
-                <LogoWrapper>
-                    {logos.map((trust, index) => 
-                        <Logo src={trust.logo} alt={trust.company} key={index} />
-                    )}
-                </LogoWrapper>
-            </ContentWrapper>
-        </Container>
-    )
-}
