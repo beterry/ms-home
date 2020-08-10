@@ -34,7 +34,7 @@ function Text(props) {
 export default function HowItWorks() {
     return (
         <Section>
-            <Padding size='1/2' />
+            <Padding />
             <Margins>
                 <Heading title='The Easiest Way to Mail' subtitle='how it works' />
                 <Padding size='m' />
@@ -58,7 +58,7 @@ export default function HowItWorks() {
                     </Step>
                 </Grid>
             </Margins>
-            <Padding size='1/2' />
+            <Padding />
         </Section>
     )
 }

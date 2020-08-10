@@ -8,6 +8,7 @@ import './styles/index.scss';
 import Rule from './components/rule'
 
 //import sections
+import Hero from './sections/hero'
 import WhyMS from './sections/why-ms'
 import HowItWorks from './sections/how-it-works'
 import Services from './sections/services'
@@ -28,25 +29,26 @@ import Margins from './layout/margins'
 function App() {
   return (
     <>
-          <Padding/>
-      <WhyMS />
-          <Padding size='1/2'/>
-      <HowItWorks />
-          <Padding size='1/2'/>
-      <Services />
-          <Padding />
-      <Products />
-          <Padding size='1/2'/>
-      <Margins><Rule /></Margins>
-          <Padding size='1/2'/>
-      <TrustLogos />
-          <Padding size='1/2'/>
-      <NoMoneyDownCTA />
-          <Padding size='1/2'/>
-      <Testimonials />
-          <Padding />
-      <Resources />
-          <Padding />
+    <Hero />
+        <Padding/>
+    <WhyMS />
+        <Padding />
+    <HowItWorks />
+        <Padding />
+    <Services />
+        <Padding />
+    <Products />
+        <Padding />
+    <Margins><Rule /></Margins>
+        <Padding />
+    <TrustLogos />
+        <Padding />
+    <NoMoneyDownCTA />
+        <Padding />
+    <Testimonials />
+        <Padding />
+    <Resources />
+        <Padding />
     </>
   )
 }

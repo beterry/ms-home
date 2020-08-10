@@ -5,13 +5,11 @@ import styled from 'styled-components'
 import colors from '../styles/colors'
 
 //import components
-import Padding from '../layout/padding'
 import Margins from '../layout/margins'
 
 export default function noMoneyDownCTA() {
     return (
         <Section>
-            <Padding size='1/2' />
             <Margins>
                 <FlexWrapper>
                     <TitleWrapper>
@@ -22,13 +20,13 @@ export default function noMoneyDownCTA() {
                     <Button primary href=''>Get Started</Button>
                 </FlexWrapper>
             </Margins>
-            <Padding size='1/2' />
         </Section>
     )
 }
 
 const Section = styled.section`
     background: ${colors.p[900]};
+    padding: 4rem 0;
 `
 
 const FlexWrapper = styled.div`
