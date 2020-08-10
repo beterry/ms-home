@@ -4,25 +4,37 @@ import styled from 'styled-components'
 //brand colors
 import colors from '../styles/colors'
 
+//import components
+import Padding from '../layout/padding'
+import Margins from '../layout/margins'
+
 export default function noMoneyDownCTA() {
     return (
         <Section>
-            <TitleWrapper>
-                <Title>Start with No Money Down</Title>
-                <Subtitle className='overline'>Get a quote today</Subtitle>
-            </TitleWrapper>
-            <Copy>We finance the cost of your market analysis, mailing list, artwork, printing, postal sorting, and delivery. You don’t pay a dime until we pay the post office for your first week’s mailing.</Copy>
-            <Button primary href=''>Get Started</Button>
+            <Padding size='1/2' />
+            <Margins>
+                <FlexWrapper>
+                    <TitleWrapper>
+                        <Title>Start with No Money Down</Title>
+                        <Subtitle className='overline'>Get a quote today</Subtitle>
+                    </TitleWrapper>
+                    <Copy>We finance the cost of your market analysis, mailing list, artwork, printing, postal sorting, and delivery. You don’t pay a dime until we pay the post office for your first week’s mailing.</Copy>
+                    <Button primary href=''>Get Started</Button>
+                </FlexWrapper>
+            </Margins>
+            <Padding size='1/2' />
         </Section>
     )
 }
 
 const Section = styled.section`
+    background: ${colors.p[900]};
+`
+
+const FlexWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: ${colors.p[900]};
-    padding: 3rem 0;
 `
 
 const TitleWrapper = styled.div`
@@ -30,6 +42,7 @@ const TitleWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     color: white;
+    text-align: center;
 `
 
 const Title = styled.h2`

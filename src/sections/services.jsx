@@ -6,7 +6,6 @@ import colors from '../styles/colors'
 
 //import components
 import Heading from '../components/section-heading'
-import Padding from '../layout/padding'
 import Margins from '../layout/margins'
 
 //import icons
