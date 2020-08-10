@@ -11,6 +11,9 @@ import midas from '../images/trust-logos/midas.svg'
 import papa from '../images/trust-logos/papa.svg'
 import mikes from '../images/trust-logos/mikes.svg'
 
+//import components
+import Margins from '../layout/margins'
+
 //logo store
 const logos = [
     {
@@ -37,43 +40,25 @@ const logos = [
 
 export default function TrustLogos() {
     return (
-        <Section>
-            <Rule />
-            <ContentWrapper>
-                <p>They trust Mail Shark</p>
-                <LogoWrapper>
-                    {logos.map((trust, index) => 
-                        <Logo src={trust.logo} alt={trust.company} key={index} />
-                    )}
-                </LogoWrapper>
-            </ContentWrapper>
-        </Section>
+        <section>
+            <Margins>
+                <ContentWrapper>
+                    <p className='overline'>They trust Mail Shark</p>
+                    <LogoWrapper>
+                        {logos.map((trust, index) => 
+                            <Logo src={trust.logo} alt={trust.company} key={index} />
+                        )}
+                    </LogoWrapper>
+                </ContentWrapper>
+            </Margins>
+        </section>
     )
 }
-
-//styles-----------------------------------------
-
-const Section = styled.section`
-    width: 90%;
-    max-width: 100rem;
-    margin: 0 auto;
-`
-
-const Rule = styled.div`
-    width: 100%;
-    background: ${colors.gray[10]};
-    height: 1px;
-    margin-bottom: 2.5rem;
-`
 
 const ContentWrapper = styled.div`
     text-align: center;
     p{
         color: ${colors.gray[60]};
-        font-size: .875rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 1px;
         margin-bottom: 2rem;
     }
 `
@@ -84,9 +69,8 @@ const LogoWrapper = styled.div`
     align-items: center;
     flex-wrap: wrap;
     opacity: .4;
-    margin-bottom: 2.5rem;
 `
 
 const Logo = styled.img`
-    margin: 0 2rem;
+    margin: 1rem 2rem;
 `

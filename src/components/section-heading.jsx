@@ -4,6 +4,9 @@ import styled from 'styled-components'
 //brand colors
 import colors from '../styles/colors'
 
+//import components
+import Padding from '../layout/padding'
+
 const TitleWrapper = styled.hgroup`
     display: flex;
     flex-direction: column;
@@ -22,11 +25,14 @@ const Subtitle = styled.h4`
     letter-spacing: 1px;
 `
 
-export default function Heading({title, subtitle}) {
+export default function Heading({title, subtitle, padding}) {
     return (
-        <TitleWrapper>
-            <Title>{title}</Title>
-            {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
-        </TitleWrapper>
+        <>
+            <TitleWrapper>
+                <Title>{title}</Title>
+                {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
+            </TitleWrapper>
+            {padding ? <Padding size='m' /> : null}
+        </>
     )
 }

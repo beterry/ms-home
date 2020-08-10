@@ -5,19 +5,21 @@ import './styles/normalize.css'
 import './styles/index.scss';
 
 //import components
-import Service from './components/service'
 import Testimonial from './components/testimonial'
 import Resource from './components/resource'
-import ProductGallery from './components/product-gallery'
+import Rule from './components/rule'
 
 //import sections
 import WhyMS from './sections/why-ms'
+import HowItWorks from './sections/how-it-works'
+import Services from './sections/services'
+import Products from './sections/products'
 import TrustLogos from './sections/trust-logos'
 import NoMoneyDownCTA from './sections/no-money-down-cta'
-import HowItWorks from './sections/how-it-works'
 
 //import layouts
 import Padding from './layout/padding'
+import Margins from './layout/margins'
 import Section from './layout/section'
 import Grid from './layout/grid'
 
@@ -41,51 +43,15 @@ function App() {
       <WhyMS />
       <Padding size='1/2'/>
       <HowItWorks />
-      <Section title='Custom Direct Mail Solutions' subtitle='Our Services'>
-        <Grid columns={3}>
-          <Service
-            title='Full-Service Mailings'
-            copy='Whether you’re mailing to everyone in your area or targeting a specific demographic, our full-service options take the hard work and confusion out of direct mail. We handle everything: design, print, and mail.'
-            includes={[
-              'Design with Unlimited Revisions',
-              'High-quality Printing',
-              'Mailing List & Area Analysis',
-              'Bundling & Paperwork',
-              'Shipping'
-            ]}
-          />
-          <Service
-            title='Every Door Direct Mail®'
-            copy='Every Door Direct Mail® (EDDM®), is a direct mailing service offered by the United States Postal Service. This do-it-yourself direct mail option gives business owners the ability to pay bulk mail rates without having to purchase a mailing permit.'
-            includes={[
-              'Design with Unlimited Revisions',
-              'High-quality Printing',
-              'Mailing List & Area Analysis',
-              'Bundling & Paperwork'
-            ]}
-            excludes={[
-              'Shipping'
-            ]}
-          />
-          <Service
-            title='Commercial Printing'
-            copy='We do all of our printing in-house, giving us the ability to ensure the best pricing, quality, and customer service.'
-            includes={[
-              'Design with Unlimited Revisions',
-              'High-quality Printing'              
-            ]}
-            excludes={[
-              'Mailing List & Area Analysis',
-              'Bundling & Paperwork',
-              'Shipping'
-            ]}
-          />
-        </Grid>
-      </Section>
-      <Section title='Stand Out in the Mailbox' subtitle='Our Products'>
-        <ProductGallery />
-      </Section>
+      <Padding size='1/2'/>
+      <Services />
+      <Padding />
+      <Products />
+      <Padding size='1/2'/>
+      <Margins><Rule /></Margins>
+      <Padding size='1/2'/>
       <TrustLogos />
+      <Padding size='1/2'/>
       <NoMoneyDownCTA />
       <Section title='What Our Customers Say' subtitle='Testimonials'>
         <Grid columns={3}>
