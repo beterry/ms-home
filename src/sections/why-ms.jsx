@@ -4,7 +4,6 @@ import styled from 'styled-components'
 //import components
 import Heading from '../components/section-heading'
 import Margins from '../layout/margins'
-import Padding from '../layout/padding'
 
 //import icons
 import weekIcon from '../images/icon-week.svg'
@@ -27,8 +26,7 @@ export default function WhyMS() {
     return (
         <section>
             <Margins>
-                <Heading title='We Do Direct Mail Differently' subtitle='why mail shark?' />
-                <Padding size='m' />
+                <Heading title='We Do Direct Mail Differently' subtitle='why mail shark?' padding/>
                 <Grid>
                     <Diff
                         icon={weekIcon}
@@ -54,7 +52,15 @@ export default function WhyMS() {
 const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem 3rem;
+
+    @media screen and (min-width: 37.5rem){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 67.5rem){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `
 
 const Title = styled.h3`

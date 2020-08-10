@@ -32,7 +32,7 @@ export default function Heading({title, subtitle, padding}) {
                 <Title>{title}</Title>
                 {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
             </TitleWrapper>
-            {padding ? <Padding size='m' /> : null}
+            {padding ? <Padding size='l' /> : null}
         </>
     )
 }
