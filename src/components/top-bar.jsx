@@ -11,6 +11,7 @@ import {MdArrowDropDown, MdMenu} from 'react-icons/md'
 //import components
 import Margins from '../layout/margins'
 import Drawer from '../components/nav-drawer'
+import {ContainedButton, TextButton, IconButton} from '../components/ms-buttons'
 
 const NavLink = ({label, link}) => (
     <a href={link}>{label}</a>
@@ -100,8 +101,8 @@ export default class TopBar extends Component {
                         <FlexWrapper>
                             <Left>
                                 <MenuButton
-                                    className='button_icon'
                                     onClick={this.toggleDrawer}
+                                    white
                                 >
                                     <MdMenu size='1.5rem' />
                                 </MenuButton>
@@ -109,15 +110,21 @@ export default class TopBar extends Component {
                                 <TopLinks />
                             </Left>
                             <Right>
-                                <a
-                                    className='button_text'
+                                <LoginButton
+                                    as='a'
                                     href='https://www.themailshark.net/logon.aspx?ReturnUrl=%2f'
                                     target='_blank'
                                     rel="noopener noreferrer"
+                                    white
                                 >
                                     Log in
-                                </a>
-                                <QuoteButton className='button_contained vivid'>Get a quote</QuoteButton>
+                                </LoginButton>
+                                <QuoteButton
+                                    as='a'
+                                    href='https://www.themailshark.com/get-a-quote/'
+                                >
+                                    Get a quote
+                                </QuoteButton>
                             </Right>
                         </FlexWrapper>
                     </Margins>
@@ -140,9 +147,6 @@ const Nav = styled.nav`
     transition: top .4s;
     top: ${props => props.goingUp ? '0' : '-3.5rem'};
     box-shadow: ${props => props.goingUp ? `0 2px 3px ${colors.gray[20]}` : null};
-    a:hover{
-        color: ${colors.c[600]};
-    }
 `
 
 const FlexWrapper = styled.div`
@@ -154,17 +158,14 @@ const FlexWrapper = styled.div`
 const Left = styled.div`
     display: flex;
     align-items: center;
-    button{
-        color: white;
-    }
-    button:hover{
-        background: ${colors.c[600]};
-    }
     a{
         display: flex;
         align-items: center;
         color: white;
         min-height: 3.5rem;
+    }
+    a:hover{
+        color: ${colors.c[600]};
     }
 `
 
@@ -173,20 +174,7 @@ const Right = styled.div`
     align-items: center;
     justify-content: space-between;
     a{
-        display: none;
-    }
-    @media screen and (min-width: 64rem){
-        a{
-            display: flex;
-            align-items: center;
-            color: white;
-            margin-right: .5rem;
-            background: ${colors.p[900]};
-        }
-        a:hover{
-            background: ${colors.p[800]};
-            color: white;
-        }
+        margin-right: .5rem;
     }
 `
 
@@ -201,13 +189,22 @@ const Links = styled.div`
     }
 `
 
-const MenuButton = styled.button`
+const MenuButton = styled(IconButton)`
     @media screen and (min-width: 64rem){
         display: none;
     }
 `
 
-const QuoteButton = styled.button`
+const QuoteButton = styled(ContainedButton)`
+    @media screen and (max-width: 26.25rem){
+        display: none;
+    }
+`
+
+const LoginButton = styled(TextButton)`
+    @media screen and (max-width: 67.5rem){
+        display: none;
+    }
 `
 
 const Logo = styled.img`
@@ -255,10 +252,10 @@ const DropdownContent = styled.div`
     a{
         min-height: auto;
         padding: 1rem 1rem;
-        border-bottom: 1px solid ${colors.p[800]};
+        border-bottom: 1px solid ${colors.c.opacity[20]};
     }
     a:hover{
-        background: ${colors.p[800]};
+        background: ${colors.c.opacity[20]};
         border-bottom: none;
     }
     a:last-child{

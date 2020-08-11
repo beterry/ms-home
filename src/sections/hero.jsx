@@ -6,6 +6,7 @@ import colors from '../styles/colors'
 
 //import layout components
 import Margins from '../layout/margins'
+import {ContainedButton, TextButton} from '../components/ms-buttons'
 
 export default function Hero() {
     return (
@@ -18,8 +19,8 @@ export default function Hero() {
                         <Copy>Mail Shark is more than a direct mail company - we’re an extension of your marketing team. We help countless businesses, like yours, to meet their marketing goals with custom direct mail solutions.</Copy>
                     </hgroup>
                     <ButtonWrapper>
-                        <a href='https://www.themailshark.com/'>Get Started</a>
-                        <a href='https://www.themailshark.com/'>Watch Video</a>
+                        <MainButton as='a' href='https://www.themailshark.com/' primary>Get Started</MainButton>
+                        <VideoButton as='a' href='https://www.themailshark.com/' white>Watch Video</VideoButton>
                     </ButtonWrapper>
                 </ContentWrapper>
             </Margins>
@@ -64,4 +65,14 @@ const Copy = styled.p`
 `
 
 const ButtonWrapper = styled.div`
+    display: flex;
+    & > *{
+        margin: 0 .5rem;
+    }
+`
+
+const MainButton = styled(ContainedButton)`
+`
+
+const VideoButton = styled(TextButton)`
 `

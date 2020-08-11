@@ -4,7 +4,7 @@ const brandColors = {
         800: "#163e5a"
     },
     s: {
-        600: "#ff8c00" //secondary
+        600: "#ff8c00", //secondary
     },
     c: {
         900: "#0e5296",
@@ -16,7 +16,10 @@ const brandColors = {
         300: "#50bff4",
         200: "#81d1f8",
         100: "#b3e3fb",
-        50: "#e1f4fe"
+        50: "#e1f4fe",
+        opacity: {
+            20: 'rgba(21, 148, 224, .2)',
+        }
     },
     gray: {
         90: 'rgba(0,0,0,.9)',

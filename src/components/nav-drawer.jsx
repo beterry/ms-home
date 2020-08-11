@@ -8,6 +8,9 @@ import colors from '../styles/colors'
 import logo from '../images/logo.svg'
 import {MdArrowDropDown} from 'react-icons/md'
 
+//import components
+import {ContainedButton, TextButton, IconButton} from '../components/ms-buttons'
+
 const NavLink = ({label, link}) => (
     <a href={link}>{label}</a>
 )
@@ -29,9 +32,9 @@ class Dropdown extends Component{
             <MainLinkWrapper>
                 <a href={this.props.link}>{this.props.label}</a>
                 <DropdownButton
-                    className='button_icon'
                     flipped={this.state.isOpen}
                     onClick={this.toggleOpen}
+                    white
                 >
                     <MdArrowDropDown size='1.5rem'/>
                 </DropdownButton>
@@ -85,15 +88,21 @@ export default function Drawer({isOpen}) {
             </LogoWrapper>
             <DrawerLinks />
             <ButtonWrapper>
-                <a
-                    className='button_text'
+                <TextButton
+                    as='a'
                     href='https://www.themailshark.net/logon.aspx?ReturnUrl=%2f'
                     target='_blank'
                     rel="noopener noreferrer"
+                    white
                 >
                     Log in
-                </a>
-                <button className='button_contained vivid'>Get a quote</button>
+                </TextButton>
+                <ContainedButton
+                    as='a'
+                    href='https://www.themailshark.com/get-a-quote/'
+                >
+                    Get a quote
+                </ContainedButton>
             </ButtonWrapper>
         </Nav>
     )
@@ -134,8 +143,8 @@ const ButtonWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     margin-top: 2rem;
-    a{
-        margin: .5rem 0;
+    a:first-child{
+        margin-bottom: .5rem;
     }
 `
 
@@ -166,7 +175,7 @@ const MainLinkWrapper = styled.div`
     }
 `
 
-const DropdownButton = styled.button`
+const DropdownButton = styled(IconButton)`
     transform: ${props => props.flipped ? 'rotate(180deg)' : 'none'};
 `
 
