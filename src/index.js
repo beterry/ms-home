@@ -48,7 +48,6 @@ function App() {
         <Testimonials />
             <Padding />
         <Resources />
-            <Padding />
     </MailShark>
   )
 }
