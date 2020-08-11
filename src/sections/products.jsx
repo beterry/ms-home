@@ -113,6 +113,10 @@ const SliderWrapper = styled.div`
     @media screen and (max-width: 40rem){
         grid-template-columns: 2.5% repeat(8, 50%) 2.5%;
     }
+    @media screen and (min-width: 112.5rem){
+        grid-template-columns: calc((100% - 100rem) * .4) repeat(8, 15%) calc((100% - 100rem) * .4);
+        gap: calc((100% - 100rem) * .1);
+    }
 `
 
 const ProductWrapper = styled.div`
