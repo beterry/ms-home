@@ -41,11 +41,13 @@ const Header = styled.header`
 `
 
 const ContentWrapper = styled.div`
+    position: relative;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
+    z-index: 2;
     hgroup{
         display: flex;
         flex-direction: column;
@@ -98,6 +100,7 @@ const moveWaves = keyframes`
 
 const Wave = styled.div`
     position: absolute;
+    z-index: 1;
     bottom: -1px;
     left: 0;
     width: 200%;

@@ -56,6 +56,7 @@ export default class TopBar extends Component {
         this.state = {
             drawerOpen: false,
             goingUp: true,
+            atTop: true,
             currentPos: 0
         }
         this.toggleDrawer = this.toggleDrawer.bind(this)
@@ -70,7 +71,8 @@ export default class TopBar extends Component {
         if (window.scrollY <= 5) {
             this.setState({
                 currentPos: window.scrollY,
-                goingUp: true
+                goingUp: true,
+                atTop: true
             })
         } else if(window.scrollY > this.state.currentPos){
             this.setState({
@@ -80,7 +82,8 @@ export default class TopBar extends Component {
         } else {
             this.setState({
                 currentPos: window.scrollY,
-                goingUp: true
+                goingUp: true,
+                atTop: false
             })
         }
     }
@@ -96,7 +99,7 @@ export default class TopBar extends Component {
     render() {
         return (
             <>
-                <Nav goingUp={this.state.goingUp}>
+                <Nav goingUp={this.state.goingUp} atTop={this.state.atTop}>
                     <Margins>
                         <FlexWrapper>
                             <Left>
@@ -137,16 +140,16 @@ export default class TopBar extends Component {
 }
 
 const Nav = styled.nav`
-    background: ${colors.p[900]};
-    min-height: 3.5rem;
+    background: ${props => props.atTop ? 'none' : colors.p[900]};
+    min-height: 4rem;
     position: fixed;
     display: flex;
     align-items: center;
     width: 100%;
     z-index: 10;
-    transition: top .4s;
-    top: ${props => props.goingUp ? '0' : '-3.5rem'};
-    box-shadow: ${props => props.goingUp ? `0 2px 3px ${colors.gray[20]}` : null};
+    transition: all .4s;
+    top: ${props => props.goingUp ? '0' : '-4rem'};
+    box-shadow: ${props => props.goingUp && !props.atTop ? `0 2px 3px ${colors.gray[20]}` : null};
 `
 
 const FlexWrapper = styled.div`
@@ -162,7 +165,7 @@ const Left = styled.div`
         display: flex;
         align-items: center;
         color: white;
-        min-height: 3.5rem;
+        min-height: 4rem;
     }
     a:hover{
         color: ${colors.c[600]};
