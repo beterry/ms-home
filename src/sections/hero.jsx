@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 //brand colors 
 import colors from '../styles/colors'
@@ -7,6 +7,9 @@ import colors from '../styles/colors'
 //import layout components
 import Margins from '../layout/margins'
 import {ContainedButton, TextButton} from '../components/ms-buttons'
+
+//import images
+import wave from '../images/wave.svg'
 
 export default function Hero() {
     return (
@@ -24,13 +27,17 @@ export default function Hero() {
                     </ButtonWrapper>
                 </ContentWrapper>
             </Margins>
+            <Wave />
         </Header>
     )
 }
 
 const Header = styled.header`
     background: linear-gradient(180deg, ${colors.royal} 0%, ${colors.p[900]} 100%) 0% 0% no-repeat padding-box;
-    padding: 6rem 0;
+    padding: 11.5rem 0 10.5rem 0;
+    position: relative;
+    overflow: hidden;
+    outline: 1px solid white;
 `
 
 const ContentWrapper = styled.div`
@@ -76,3 +83,32 @@ const MainButton = styled(ContainedButton)`
 
 const VideoButton = styled(TextButton)`
 `
+
+const moveWaves = keyframes`
+    from {
+        transform: translateX(0) translateZ(0) scaleY(1);
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55);
+    }
+    to {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+    }
+`
+
+const Wave = styled.div`
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: url(${wave});
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+    background-size: 50% auto;
+    animation: ${moveWaves} 20s linear infinite;
+    animation-delay: 0s;
+    -webkit-animation: ${moveWaves} 20s linear infinite;
+`
+
