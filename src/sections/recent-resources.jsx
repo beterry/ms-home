@@ -85,7 +85,15 @@ export default function Resources() {
 const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+
+    @media screen and (min-width: 37.5rem){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 67.5rem){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 `
 
 const Card = styled.a`

@@ -36,8 +36,7 @@ export default function HowItWorks() {
         <Section>
             <Padding />
             <Margins>
-                <Heading title='The Easiest Way to Mail' subtitle='how it works' />
-                <Padding size='m' />
+                <Heading title='The Easiest Way to Mail' subtitle='how it works' padding />
                 <Grid>
                     <Step number={1} title='Choose a Product'>
                         <Text>Happy to hear you decided on using Mail Shark to reach your marketing goals! What product would you like to mail?</Text>
@@ -70,7 +69,15 @@ const Section = styled.section`
 const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem 3rem;
+
+    @media screen and (min-width: 51.25rem){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 67.5rem){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `
 
 const StepWrapper = styled.div`
@@ -98,7 +105,7 @@ const Title = styled.h3`
 const Messages = styled.div`
     background: white;
     border: 1px solid ${colors.gray[10]};
-    border-radius: .25rem;
+    border-radius: 1rem;
     padding: 1.5rem 2rem;
     flex-grow: 1;
     display: flex;
