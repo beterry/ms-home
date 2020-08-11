@@ -38,6 +38,7 @@ export default function Testimonials() {
         <section>
             <Margins>
                 <Heading title='What Our Customers Say' subtitle='Testimonials' padding />
+            </Margins>
                 <Grid>
                     <Testimonial
                         profile={terryMckim}
@@ -58,18 +59,28 @@ export default function Testimonials() {
                         business={`Fox's Pizza Den`}
                     />
                 </Grid>
-            </Margins>
         </section>
     )
 }
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5%;
+    grid-template-columns: 2.5% repeat(3, 80%) 2.5%;
+    overflow-x: auto;
+    padding-bottom: 2rem; 
+    &::before, &::after{
+        content: "";
+    } 
 
     @media screen and (min-width: 37.5rem){
         grid-template-columns: 1fr 1fr;
+        &::before, &::after{
+            content: normal;
+        }
+        width: 90%;
+        max-width: 100rem;
+        margin: 0 auto; 
     }
 
     @media screen and (min-width: 67.5rem){
