@@ -65,6 +65,7 @@ export default function Resources() {
         <section>
             <Margins>
                 <Heading title='We Are Direct Mail Experts' subtitle='resources' padding />
+            </Margins>
                 <Grid>
                     {resources.map((resource, index) => 
                         <Resource
@@ -77,22 +78,36 @@ export default function Resources() {
                         />
                     )}                    
                 </Grid>
-            </Margins>
         </section>
     )
 }
 
 const Grid = styled.div`
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2.5%;
+    grid-template-columns: 2.5% repeat(4, 80%) 2.5%;
+    overflow-x: auto;
+    padding-bottom: 2rem; 
+    &::before, &::after{
+        content: "";
+    } 
 
     @media screen and (min-width: 37.5rem){
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2.5% repeat(4, 60%) 2.5%;
+    }
+
+    @media screen and (min-width: 53rem){
+        grid-template-columns: 2.5% repeat(4, 40%) 2.5%;
     }
 
     @media screen and (min-width: 67.5rem){
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        &::before, &::after{
+            content: normal;
+        }
+        grid-template-columns: repeat(4, 1fr);
+        width: 90%;
+        max-width: 100rem;
+        margin: 0 auto; 
     }
 `
 
