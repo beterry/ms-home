@@ -21,35 +21,35 @@ import Resources from './sections/recent-resources'
 //import layouts
 import Padding from './layout/padding'
 import Margins from './layout/margins'
-
+import MailShark from './layout/ms-layout'
 
 //import colors
 // import colors from './styles/colors'
 
 function App() {
   return (
-    <>
-    <Hero />
-        <Padding/>
-    <WhyMS />
-        <Padding />
-    <HowItWorks />
-        <Padding />
-    <Services />
-        <Padding />
-    <Products />
-        <Padding />
-    <Margins><Rule /></Margins>
-        <Padding />
-    <TrustLogos />
-        <Padding />
-    <NoMoneyDownCTA />
-        <Padding />
-    <Testimonials />
-        <Padding />
-    <Resources />
-        <Padding />
-    </>
+    <MailShark>
+        <Hero />
+            <Padding/>
+        <WhyMS />
+            <Padding />
+        <HowItWorks />
+            <Padding />
+        <Services />
+            <Padding />
+        <Products />
+            <Padding />
+        <Margins><Rule /></Margins>
+            <Padding />
+        <TrustLogos />
+            <Padding />
+        <NoMoneyDownCTA />
+            <Padding />
+        <Testimonials />
+            <Padding />
+        <Resources />
+            <Padding />
+    </MailShark>
   )
 }
 
