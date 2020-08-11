@@ -11,7 +11,7 @@ const Button = styled.button`
     min-width: 4rem;
     border-radius: .25rem;
     padding: 0 1rem;
-    flex-shrink: 0;
+    flex: 0 0 auto;
     font-size: .875rem;
     letter-spacing: .7px;
     text-transform: uppercase;

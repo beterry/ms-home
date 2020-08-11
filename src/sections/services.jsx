@@ -7,36 +7,64 @@ import colors from '../styles/colors'
 //import components
 import Heading from '../components/section-heading'
 import Margins from '../layout/margins'
+import {TextButton, IconButton} from '../components/ms-buttons'
 
 //import icons
 import plus from '../images/plus.svg'
 import minus from '../images/minus.svg'
+import {MdExpandMore} from 'react-icons/md'
 
-function Service({title, copy, includes=[], excludes=[], link}) {
-    return (
-        <Card>
-            <TextWrapper>
-                <Title>{title}</Title>
-                <Copy>{copy}</Copy>
-            </TextWrapper>
-            <ListWrapper>
-                <List>
-                    {includes.map((item, index) => 
-                        <ListItem key={`includes${index}`}>
-                            <img src={plus} alt='plus' />
-                            <p>{item}</p>
-                        </ListItem>
-                    )}
-                    {excludes.map((item, index) => 
-                        <ListItem key={`excludes${index}`} gray>
-                            <img src={minus} alt='plus' />
-                            <p>{item}</p>
-                        </ListItem>
-                    )}
-                </List>
-            </ListWrapper>
-        </Card>
-    )
+class Service extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {showList: true}
+        this.toggleList = this.toggleList.bind(this)
+    }
+
+    toggleList() {
+        this.setState({showList: !this.state.showList})
+    }
+
+    componentDidMount() {
+        if (window.innerWidth < 600){
+            this.setState({showList: false})
+        }
+    }
+
+    render() {
+        const {title, copy, includes=[], excludes=[], link} = this.props
+        return (
+            <Card>
+                <TextWrapper>
+                    <Title>{title}</Title>
+                    <Copy>{copy}</Copy>
+                </TextWrapper>
+                {this.state.showList ?
+                    <ListWrapper>
+                        <List>
+                            {includes.map((item, index) => 
+                                <ListItem key={`includes${index}`}>
+                                    <img src={plus} alt='plus' />
+                                    <p>{item}</p>
+                                </ListItem>
+                            )}
+                            {excludes.map((item, index) => 
+                                <ListItem key={`excludes${index}`} gray>
+                                    <img src={minus} alt='plus' />
+                                    <p>{item}</p>
+                                </ListItem>
+                            )}
+                        </List>
+                    </ListWrapper> :
+                    null
+                }
+                <ButtonWrapper>
+                    <ShowMoreButton onClick={this.toggleList} flipped={this.state.showList}><MdExpandMore size='1.5rem' /></ShowMoreButton>
+                    <TextButton as='a' href={link}>Learn More</TextButton>
+                </ButtonWrapper>
+            </Card>
+        )
+    }
 }
 
 export default function Services() {
@@ -55,6 +83,7 @@ export default function Services() {
                         'Bundling & Paperwork',
                         'Shipping'
                         ]}
+                        link='https://www.themailshark.com/direct-mailing-services/mailing-lists/'
                     />
                     <Service
                         title='Every Door Direct Mail®'
@@ -68,6 +97,7 @@ export default function Services() {
                         excludes={[
                         'Shipping'
                         ]}
+                        link='https://www.themailshark.com/direct-mailing-services/every-door-direct-mail/'
                     />
                     <Service
                         title='Commercial Printing'
@@ -81,6 +111,7 @@ export default function Services() {
                         'Bundling & Paperwork',
                         'Shipping'
                         ]}
+                        link='https://www.themailshark.com/printing-services/'
                     />
                 </Grid>
             </Margins>
@@ -108,11 +139,10 @@ const Card = styled.div`
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 `
 
 const TextWrapper = styled.div`
-    margin-bottom: 2rem;
+    flex-grow: 1;
 `
 
 const Title = styled.h3`
@@ -123,6 +153,7 @@ const Copy = styled.p`
 `
 
 const ListWrapper = styled.div`
+    margin-top: 2rem;
 `
 
 const List = styled.ul`
@@ -135,5 +166,18 @@ const ListItem = styled.li`
     p{
         margin-left: .75rem;
         color: ${props => props.gray ? colors.gray[20] : 'black'};
+    }
+`
+
+const ButtonWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+`
+
+const ShowMoreButton = styled(IconButton)`
+    transform: ${props => props.flipped ? 'rotate(180deg)' : 'none'};
+    @media screen and (min-width: 37.5rem){
+        display: none;
     }
 `
