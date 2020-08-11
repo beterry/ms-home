@@ -10,6 +10,7 @@ import {MdArrowDropDown, MdMenu} from 'react-icons/md'
 
 //import components
 import Margins from '../layout/margins'
+import Drawer from '../components/nav-drawer'
 
 const NavLink = ({label, link}) => (
     <a href={link}>{label}</a>
@@ -121,8 +122,8 @@ export default class TopBar extends Component {
                         </FlexWrapper>
                     </Margins>
                 </Nav>
-                {/* {this.state.drawerOpen ? <Underlay handleClick={this.toggleDrawer}/> : null}
-                <NavDrawer isOpen={this.state.drawerOpen} /> */}
+                {this.state.drawerOpen ? <Underlay onClick={this.toggleDrawer}/> : null}
+                <Drawer isOpen={this.state.drawerOpen} />
             </>
         )
     }

@@ -1,6 +1,18 @@
-import React from 'react'
+import React, {Component} from 'react'
+import styled from 'styled-components'
 
-class DrawerDropdown extends Component{
+//brand colors
+import colors from '../styles/colors'
+
+//import images
+import logo from '../images/logo.svg'
+import {MdArrowDropDown} from 'react-icons/md'
+
+const NavLink = ({label, link}) => (
+    <a href={link}>{label}</a>
+)
+
+class Dropdown extends Component{
     constructor(props){
         super(props)
         this.state = {isOpen: false}
@@ -14,37 +26,38 @@ class DrawerDropdown extends Component{
     render() {
         return(
             <>
-            <div className={styles.drawer_link}>
+            <MainLinkWrapper>
                 <a href={this.props.link}>{this.props.label}</a>
-                <button
-                    className={`button_icon ${this.state.isOpen ? styles.flipped : null}`}
+                <DropdownButton
+                    className='button_icon'
+                    flipped={this.state.isOpen}
                     onClick={this.toggleOpen}
                 >
                     <MdArrowDropDown size='1.5rem'/>
-                </button>
-            </div>
-            <div className={styles.drawer_dropdown}>
+                </DropdownButton>
+            </MainLinkWrapper>
+            <DropdownContent>
                 {this.state.isOpen ? 
                     this.props.children :
                     null
                 }
-            </div>
+            </DropdownContent>
             </>
         )
     }
 }
 
 const DrawerLink = ({label, link}) => (
-    <div className={styles.drawer_link}>
-        <a href={link}>{label}</a>
-    </div>
+    <MainLinkWrapper>
+        <NavLink label={label} link={link} />
+    </MainLinkWrapper>
     
 ) 
 
 const DrawerLinks = () => (
-    <div className={styles.drawer_links}>
+    <LinkWrapper>
         <DrawerLink label='About Us' link='https://www.themailshark.com/about/' />
-        <DrawerDropdown label='Products & Pricing' link='https://www.themailshark.com/products/'>
+        <Dropdown label='Products & Pricing' link='https://www.themailshark.com/products/'>
             <NavLink label='Postcards' link='https://www.themailshark.com/products/postcards/' />
             <NavLink label='Postcard Magnets' link='https://www.themailshark.com/products/postcard-magnets/' />
             <NavLink label='Scratch-Off Postcards' link='https://www.themailshark.com/products/scratch-off-postcards/' />
@@ -52,26 +65,26 @@ const DrawerLinks = () => (
             <NavLink label='Menus' link='https://www.themailshark.com/products/menus/' />
             <NavLink label='Brochures' link='https://www.themailshark.com/products/brochures/' />
             <NavLink label='Letters' link='https://www.themailshark.com/products/letters/' />
-        </DrawerDropdown>
-        <DrawerDropdown label='Direct Mail Services' link='https://www.themailshark.com/direct-mailing-services/'>
+        </Dropdown>
+        <Dropdown label='Direct Mail Services' link='https://www.themailshark.com/direct-mailing-services/'>
             <NavLink label='Our Strategy' link='https://www.themailshark.com/our-strategy/' />
             <NavLink label='Mailing Lists' link='https://www.themailshark.com/direct-mailing-services/mailing-lists/' />
             <NavLink label='Every Door Direct Mail' link='https://www.themailshark.com/direct-mailing-services/every-door-direct-mail/' />
             <NavLink label='Design' link='https://www.themailshark.com/design-services/' />
             <NavLink label='Print' link='https://www.themailshark.com/printing-services/' />
-        </DrawerDropdown>
+        </Dropdown>
         <DrawerLink label='Resources' link='https://www.themailshark.com/resources/' />
-    </div>
+    </LinkWrapper>
 )
 
-export default function Drawer() {
+export default function Drawer({isOpen}) {
     return (
-        <nav className={isOpen ? styles.drawer_open : styles.drawer_closed}>
-            <div className={styles.drawer_logo}>
+        <Nav isOpen={isOpen}>
+            <LogoWrapper>
                 <img src={logo} alt='Mail Shark logo' />
-            </div>
+            </LogoWrapper>
             <DrawerLinks />
-            <div className={styles.drawer_login}>
+            <ButtonWrapper>
                 <a
                     className='button_text'
                     href='https://www.themailshark.net/logon.aspx?ReturnUrl=%2f'
@@ -81,7 +94,85 @@ export default function Drawer() {
                     Log in
                 </a>
                 <button className='button_contained vivid'>Get a quote</button>
-            </div>
-        </nav>
+            </ButtonWrapper>
+        </Nav>
     )
 }
+
+const Nav = styled.nav`
+    z-index: 12;
+    position: fixed;
+    top: 0;
+    background: ${colors.p[900]};
+    width: calc(100% - 3.5rem);
+    max-width: 25rem;
+    height: 100vh;
+    padding: 2rem;
+    overflow: auto;
+    transition: left .2s;
+    display: flex;
+    flex-direction: column;
+    left: ${props => props.isOpen ? '0' : '-25rem'};
+    box-shadow: ${props => props.isOpen ? `6px 0 8px ${colors.gray[30]}` : 'none'};
+    a{
+        color: white;
+    }
+`
+
+const LogoWrapper = styled.div`
+    width: 100%;
+    max-width: 10rem;
+    margin-bottom: 2rem;
+    img{
+        width: 100%;
+    }
+`
+
+const ButtonWrapper = styled.div`
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    a{
+        margin: .5rem 0;
+    }
+`
+
+const LinkWrapper = styled.div`
+    a{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 3rem;
+        flex-grow: 1;
+    }
+`
+
+const MainLinkWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid ${colors.p[800]};
+    a{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    button{  
+        color: white;
+    }
+    button:hover {
+        background: ${colors.p[800]};
+    }
+`
+
+const DropdownButton = styled.button`
+    transform: ${props => props.flipped ? 'rotate(180deg)' : 'none'};
+`
+
+const DropdownContent = styled.div`
+    a{
+        border-bottom: 1px solid ${colors.p[800]};
+        padding-left: 1.5rem;
+    }
+`
