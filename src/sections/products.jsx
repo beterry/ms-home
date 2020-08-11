@@ -82,7 +82,7 @@ export default function Products() {
                 <Heading title='Stand Out in the Mailbox' subtitle='Our products' padding />
             </Margins>
             <SliderWrapper>
-                <Slider>
+
                     {products.map((product, index) => 
                         <Product
                             name={product.name}
@@ -92,26 +92,24 @@ export default function Products() {
                             key={index}
                         />
                     )}
-                </Slider>
+
             </SliderWrapper>
         </section>
     )
 }
 
 const SliderWrapper = styled.div`
-    overflow-x: scroll;
-    border-radius: .25rem;
-`
-
-const Slider = styled.div`
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
     gap: 2rem;
-    padding: 0 5%;
+    grid-template-columns: calc(5% - 2rem) repeat(8, 20%) calc(5% - 2rem);
+    overflow-x: auto;
+    padding-bottom: 2rem; 
+    &::before, &::after{
+        content: '';
+    }
 `
 
 const ProductWrapper = styled.div`
-    width: 15rem;
     text-align: center;
     p{
         color: ${colors.c[600]};
