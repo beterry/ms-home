@@ -82,7 +82,7 @@ export default function Products() {
                 <Heading title='Stand Out in the Mailbox' subtitle='Our products' padding />
             </Margins>
             <SliderWrapper>
-
+                    <div />
                     {products.map((product, index) => 
                         <Product
                             name={product.name}
@@ -92,7 +92,7 @@ export default function Products() {
                             key={index}
                         />
                     )}
-
+                    <div />
             </SliderWrapper>
         </section>
     )
@@ -100,12 +100,18 @@ export default function Products() {
 
 const SliderWrapper = styled.div`
     display: grid;
-    gap: 2rem;
-    grid-template-columns: calc(5% - 2rem) repeat(8, 20%) calc(5% - 2rem);
+    gap: 2.5%;
+    grid-template-columns: 2.5% repeat(8, 20%) 2.5%;
     overflow-x: auto;
     padding-bottom: 2rem; 
-    &::before, &::after{
-        content: '';
+    @media screen and (max-width: 67.5rem){
+        grid-template-columns: 2.5% repeat(8, 25%) 2.5%;
+    }
+    @media screen and (max-width: 53rem){
+        grid-template-columns: 2.5% repeat(8, 35%) 2.5%;
+    }
+    @media screen and (max-width: 40rem){
+        grid-template-columns: 2.5% repeat(8, 50%) 2.5%;
     }
 `
 
