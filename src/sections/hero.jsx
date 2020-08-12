@@ -9,7 +9,8 @@ import Margins from '../layout/margins'
 import {ContainedButton, TextButton} from '../components/ms-buttons'
 
 //import images
-import wave from '../images/wave.svg'
+import waveLG from '../images/wave.svg'
+import waveSM from '../images/wave-sm.svg'
 
 export default function Hero() {
     return (
@@ -17,7 +18,7 @@ export default function Hero() {
             <Margins>
                 <ContentWrapper>
                     <hgroup>
-                        <h1>Direct Mail Marketing</h1>
+                        <Heading>Direct Mail Marketing</Heading>
                         <h2 className='overline'>Easy & Affordable</h2>
                         <Copy>Mail Shark is more than a direct mail company - we’re an extension of your marketing team. We help countless businesses, like yours, to meet their marketing goals with custom direct mail solutions.</Copy>
                     </hgroup>
@@ -38,6 +39,17 @@ const Header = styled.header`
     position: relative;
     overflow: hidden;
     outline: 1px solid white;
+    @media screen and (max-width: 48rem){
+        padding: 9.5rem 0 8.5rem 0;
+    }
+`
+
+const Heading = styled.h1`
+    order: 2;
+    font-size: 4.375rem;
+    @media screen and (max-width: 48rem){
+        font-size: 3.5rem;
+    }
 `
 
 const ContentWrapper = styled.div`
@@ -53,10 +65,6 @@ const ContentWrapper = styled.div`
         flex-direction: column;
         align-items: center;
         text-align: center;
-        h1{
-            order: 2;
-            font-size: 4.375rem;   
-        }
         h2{
             order: 1;
             color: ${colors.c[600]};
@@ -105,7 +113,7 @@ const Wave = styled.div`
     left: 0;
     width: 200%;
     height: 100%;
-    background-image: url(${wave});
+    background-image: url(${waveLG});
     background-repeat: repeat no-repeat;
     background-position: 0 bottom;
     transform-origin: center bottom;
@@ -113,5 +121,9 @@ const Wave = styled.div`
     animation: ${moveWaves} 20s linear infinite;
     animation-delay: 0s;
     -webkit-animation: ${moveWaves} 20s linear infinite;
+    @media screen and (max-width: 37.5rem){
+        background-image: url(${waveSM});
+        animation: ${moveWaves} 15s linear infinite;
+    }
 `
 

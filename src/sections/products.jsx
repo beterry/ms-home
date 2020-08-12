@@ -116,7 +116,7 @@ const SliderWrapper = styled.div`
         grid-template-columns: 2.5% repeat(8, 35%) 2.5%;
     }
     @media screen and (max-width: 40rem){
-        grid-template-columns: 2.5% repeat(8, 50%) 2.5%;
+        grid-template-columns: 2.5% repeat(8, 70%) 2.5%;
     }
     @media screen and (min-width: 112.5rem){
         grid-template-columns: calc((100% - 100rem) * .4) repeat(8, 15%) calc((100% - 100rem) * .4);

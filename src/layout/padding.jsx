@@ -12,7 +12,21 @@ const Padding = styled.div`
         default:
             return '6.5rem'
     }
-  }}
+  }};
+  @media screen and (max-width: 37.5rem){
+    height: ${ props => {
+    switch(props.size){
+        case 's': 
+            return '.75rem'
+        case 'm': 
+            return '2rem'
+        case 'l': 
+            return '3rem'
+        default:
+            return '4rem'
+    }
+  }};
+  }
 `;
 
 export default Padding;

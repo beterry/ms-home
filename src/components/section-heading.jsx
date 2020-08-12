@@ -30,6 +30,7 @@ export default function Heading({title, subtitle, link, padding}) {
 const TitleWrapper = styled.hgroup`
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 `
 
 const Title = styled.h2`
