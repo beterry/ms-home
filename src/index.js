@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import './styles/normalize.css'
 import './styles/index.scss';
 
-
-
 //import sections
 import Hero from './sections/hero'
 import WhyMS from './sections/why-ms'
@@ -37,7 +35,6 @@ function App() {
             <Padding />
         <Products />
             <Padding />
-
         <TrustLogos />
             <Padding />
         <NoMoneyDownCTA />
