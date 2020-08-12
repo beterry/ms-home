@@ -26,8 +26,8 @@ export default function Hero() {
                         <Copy>Mail Shark is more than a direct mail company - we’re an extension of your marketing team. We help countless businesses, like yours, to meet their marketing goals with custom direct mail solutions.</Copy>
                     </hgroup>
                     <ButtonWrapper>
-                        <MainButton as='a' href='https://www.themailshark.com/' primary>Get Started</MainButton>
-                        <VideoButton as='a' href='https://www.themailshark.com/' white icon><MdPlayArrow size='1.5rem' />Watch Video</VideoButton>
+                        <MainButton as='a' href='https://www.themailshark.com/get-a-quote/' primary>Get Started</MainButton>
+                        <VideoButton white icon><MdPlayArrow size='1.5rem' />Watch Video</VideoButton>
                     </ButtonWrapper>
                 </ContentWrapper>
             </Margins>
@@ -86,8 +86,10 @@ const Copy = styled.p`
 
 const ButtonWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     & > *{
-        margin: 0 .5rem;
+        margin: .5rem;
     }
 `
 

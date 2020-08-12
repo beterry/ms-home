@@ -4,8 +4,7 @@ import ReactDOM from 'react-dom';
 import './styles/normalize.css'
 import './styles/index.scss';
 
-//import components
-import Rule from './components/rule'
+
 
 //import sections
 import Hero from './sections/hero'
@@ -20,7 +19,6 @@ import Resources from './sections/recent-resources'
 
 //import layouts
 import Padding from './layout/padding'
-import Margins from './layout/margins'
 import MailShark from './layout/ms-layout'
 
 //import colors
@@ -39,8 +37,7 @@ function App() {
             <Padding />
         <Products />
             <Padding />
-        <Margins><Rule /></Margins>
-            <Padding />
+
         <TrustLogos />
             <Padding />
         <NoMoneyDownCTA />
