@@ -11,10 +11,12 @@ import {ContainedButton, TextButton} from '../components/ms-buttons'
 //import images
 import waveLG from '../images/wave.svg'
 import waveSM from '../images/wave-sm.svg'
+import shark from '../images/shark.svg'
 
 export default function Hero() {
     return (
         <Header>
+            <Shark src={shark} alt='shark silouette'/>
             <Margins>
                 <ContentWrapper>
                     <hgroup>
@@ -106,6 +108,24 @@ const moveWaves = keyframes`
     }
 `
 
+const moveSharkLG = keyframes`
+    from {
+        left: 10%;
+    }
+    to {
+        left: 100%;
+    }
+`
+
+const moveSharkSM = keyframes`
+    from {
+        left: -90%;
+    }
+    to {
+        left: 100%;
+    }
+`
+
 const Wave = styled.div`
     position: absolute;
     z-index: 1;
@@ -127,3 +147,21 @@ const Wave = styled.div`
     }
 `
 
+const Shark = styled.img`
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    opacity: .2;
+    animation-name: ${moveSharkLG};
+    animation-duration: 90s;
+    animation-timing-function: linear;
+    @media screen and (max-width: 64rem){
+        width: 120%;
+        top: 35%;
+    }
+    @media screen and (max-width: 37.5rem){
+        animation-name: ${moveSharkSM};
+        width: 200%;
+        top: 10%;
+    }
+`
