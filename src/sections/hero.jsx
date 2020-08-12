@@ -12,6 +12,7 @@ import {ContainedButton, TextButton} from '../components/ms-buttons'
 import waveLG from '../images/wave.svg'
 import waveSM from '../images/wave-sm.svg'
 import shark from '../images/shark.svg'
+import {MdPlayArrow} from 'react-icons/md'
 
 export default function Hero() {
     return (
@@ -26,7 +27,7 @@ export default function Hero() {
                     </hgroup>
                     <ButtonWrapper>
                         <MainButton as='a' href='https://www.themailshark.com/' primary>Get Started</MainButton>
-                        <VideoButton as='a' href='https://www.themailshark.com/' white>Watch Video</VideoButton>
+                        <VideoButton as='a' href='https://www.themailshark.com/' white icon><MdPlayArrow size='1.5rem' />Watch Video</VideoButton>
                     </ButtonWrapper>
                 </ContentWrapper>
             </Margins>
@@ -155,6 +156,7 @@ const Shark = styled.img`
     animation-name: ${moveSharkLG};
     animation-duration: 90s;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
     @media screen and (max-width: 64rem){
         width: 120%;
         top: 35%;

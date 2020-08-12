@@ -30,6 +30,10 @@ const ContainedButton = styled(Button)`
 
 const TextButton = styled(Button)`
     color: ${props => props.white ? 'white' : colors.c[600]};
+    padding: ${props => props.icon ? '0 1rem 0 .5rem' : null};
+    & *:first-child{
+        margin-right: .25rem;
+    }
     &:hover{
         background: ${colors.c.opacity[20]};
     }

@@ -6,6 +6,7 @@ import colors from '../styles/colors'
 
 //import components
 import Margins from '../layout/margins'
+import {ContainedButton} from '../components/ms-buttons'
 
 export default function noMoneyDownCTA() {
     return (
@@ -17,7 +18,7 @@ export default function noMoneyDownCTA() {
                         <Subtitle className='overline'>Get a quote today</Subtitle>
                     </TitleWrapper>
                     <Copy>We finance the cost of your market analysis, mailing list, artwork, printing, postal sorting, and delivery. You don’t pay a dime until we pay the post office for your first week’s mailing.</Copy>
-                    <Button primary href=''>Get Started</Button>
+                    <ContainedButton as='a' primary href='https://www.themailshark.com/get-a-quote/'>Get Started</ContainedButton>
                 </FlexWrapper>
             </Margins>
         </Section>
@@ -25,7 +26,7 @@ export default function noMoneyDownCTA() {
 }
 
 const Section = styled.section`
-    background: ${colors.p[900]};
+    background: linear-gradient(180deg, ${colors.p[800]} 0%, ${colors.p[900]} 100%) 0% 0% no-repeat padding-box;
     padding: 4rem 0;
 `
 
@@ -50,6 +51,7 @@ const Title = styled.h2`
 const Subtitle = styled.h3`
     order: 1;
     color: ${colors.c[600]};
+    margin-bottom: .5rem;
 `
 
 const Copy = styled.p`
@@ -58,22 +60,4 @@ const Copy = styled.p`
     color: white;
     margin: 1.5rem 0;
     
-`
-
-const Button = styled.a`
-    background: ${props => props.primary ? colors.s[600] : colors.c[600]};
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: .875rem;
-    letter-spacing: .7px;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-    min-height: 2.25rem;
-    min-width: 4rem;
-    border-radius: .25rem;
-    padding: 0 1rem;
 `
