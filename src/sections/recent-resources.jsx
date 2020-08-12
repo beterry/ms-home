@@ -9,37 +9,40 @@ import Margins from '../layout/margins'
 import Heading from '../components/section-heading'
 
 //import images
-import resource1 from '../images/eddm-guide-auto.jpg'
+import resource1 from '../images/resources/resource-1.jpg'
+import resource2 from '../images/resources/resource-2.jpg'
+import resource3 from '../images/resources/resource-3.jpg'
+import resource4 from '../images/resources/resource-4.jpg'
 
 //resource store
 const resources = [
     {
-        title: 'The EDDM Guide for Auto Repair Shops',
+        title: 'The EDDM® Guide for Auto Repair Shops',
         category: 'EDDM® Basics',
         minutesToRead: 10,
         image: resource1,
-        link: ''
+        link: 'https://www.themailshark.com/resources/guides/the-eddm-guide-for-auto-repair-shops/'
     },
     {
-        title: 'The EDDM Guide for Auto Repair Shops',
-        category: 'EDDM® Basics',
-        minutesToRead: 10,
-        image: resource1,
-        link: ''
+        title: 'How to Make Your Postcard Advertising Pop',
+        category: 'Best Practice',
+        minutesToRead: 7,
+        image: resource2,
+        link: 'https://www.themailshark.com/resources/articles/how-to-make-your-postcard-advertising-pop/'
     },
     {
-        title: 'The EDDM Guide for Auto Repair Shops',
-        category: 'EDDM® Basics',
+        title: '"The Bottom Feeder" Customer',
+        category: 'Tips & Advice',
         minutesToRead: 10,
-        image: resource1,
-        link: ''
+        image: resource3,
+        link: 'https://www.themailshark.com/resources/blog/auto-repair-shops-the-bottom-feeder-customer/'
     },
     {
-        title: 'The EDDM Guide for Auto Repair Shops',
-        category: 'EDDM® Basics',
-        minutesToRead: 10,
-        image: resource1,
-        link: ''
+        title: 'Scratch Off Postcards Gain Attention',
+        category: 'Tips & Advice',
+        minutesToRead: 5,
+        image: resource4,
+        link: 'https://www.themailshark.com/resources/blog/scratch-off-postcards-gain-attention/'
     },
 ]
 
@@ -51,7 +54,7 @@ function Resource({image, title, link, minutesToRead, category}) {
             </ImageWrapper>
             <TextWrapper>
                 <TitleWrapper>
-                    <h3>{title}</h3>
+                    <h4>{title}</h4>
                     <p>{category}</p>
                 </TitleWrapper>
                 <Time>{`${minutesToRead} min`}</Time>
@@ -121,6 +124,8 @@ const Card = styled.a`
     overflow: hidden;
     border-radius: .25rem;
     transition: box-shadow .2s;
+    display: flex;
+    flex-direction: column;
     &:hover{
         box-shadow: 0 0 10px ${colors.gray[20]};
     }
@@ -137,6 +142,7 @@ const TextWrapper = styled.div`
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 `
 
 const TitleWrapper = styled.div`
@@ -150,7 +156,7 @@ const TitleWrapper = styled.div`
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    h3{
+    h4{
         order: 2;
     }
 `

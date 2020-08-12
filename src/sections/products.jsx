@@ -9,7 +9,14 @@ import Heading from '../components/section-heading'
 import colors from '../styles/colors'
 
 //import images
-import opc from '../images/products/opc.jpg'
+import postcard from '../images/products/product-postcards.jpg'
+import magnet from '../images/products/product-postcard-magnets.jpg'
+import plastic from '../images/products/product-plastic-postcards.jpg'
+import scratch from '../images/products/product-scratch-off-postcards.jpg'
+import menu from '../images/products/product-menus.jpg'
+import letter from '../images/products/product-direct-mail-letters.jpg'
+import brochure from '../images/products/product-brochures.jpg'
+import door from '../images/products/product-door-hangers.jpg'
 
 //product store
 const products = [
@@ -17,60 +24,60 @@ const products = [
         name: 'Direct Mail Postcards',
         productsAvailable: 3,
         link: 'postcards',
-        image: opc
+        image: postcard
     },
     {
-        name: 'Magnet Postcards',
+        name: 'Postcards Magnets',
         productsAvailable: 2,
-        link: 'postcards',
-        image: opc
+        link: 'postcard-magnets',
+        image: magnet
     },
     {
-        name: 'Direct Mail Postcards',
+        name: 'Plastic Postcards',
         productsAvailable: 3,
-        link: 'postcards',
-        image: opc
+        link: 'plastic-postcards',
+        image: plastic
     },
     {
-        name: 'Direct Mail Postcards',
-        productsAvailable: 3,
-        link: 'postcards',
-        image: opc
+        name: 'Scratch-Off Postcards',
+        productsAvailable: 2,
+        link: 'scratch-off-postcards',
+        image: scratch
     },
     {
-        name: 'Direct Mail Postcards',
+        name: 'Restaurant Menu Mailers',
         productsAvailable: 3,
-        link: 'postcards',
-        image: opc
+        link: 'menus',
+        image: menu
     },
     {
-        name: 'Direct Mail Postcards',
-        productsAvailable: 3,
-        link: 'postcards',
-        image: opc
+        name: 'Direct Mail Letters',
+        productsAvailable: 2,
+        link: 'letters',
+        image: letter
     },
     {
-        name: 'Direct Mail Postcards',
+        name: 'Brochures',
         productsAvailable: 3,
-        link: 'postcards',
-        image: opc
+        link: 'brochures',
+        image: brochure
     },
     {
-        name: 'Direct Mail Postcards',
-        productsAvailable: 3,
-        link: 'postcards',
-        image: opc
+        name: 'Door Hangers',
+        productsAvailable: 1,
+        link: 'door-hangers',
+        image: door
     },
 ]
 
 function Product({name, productsAvailable, link, image}) {
     return (
-        <ProductWrapper>
+        <ProductWrapper href={`https://www.themailshark.com/products/${link}/`}>
             <ImageWrapper>
                 <img src={image} alt=''/>
             </ImageWrapper>
             <h3>{name}</h3>
-            <p>{`${productsAvailable} Products Available`}</p>
+            <p>{`${productsAvailable} Product${productsAvailable > 1 ? 's' : ''} Available`}</p>
         </ProductWrapper>
     )
 }
@@ -92,7 +99,7 @@ export default function Products() {
                         <Product
                             name={product.name}
                             productsAvailable={product.productsAvailable}
-                            link=''
+                            link={product.link}
                             image={product.image}
                             key={index}
                         />
@@ -124,7 +131,7 @@ const SliderWrapper = styled.div`
     }
 `
 
-const ProductWrapper = styled.div`
+const ProductWrapper = styled.a`
     text-align: center;
     p{
         color: ${colors.c[600]};
