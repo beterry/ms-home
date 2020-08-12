@@ -64,7 +64,12 @@ export default function Resources() {
     return (
         <section>
             <Margins>
-                <Heading title='We Are Direct Mail Experts' subtitle='resources' padding />
+                <Heading
+                    title='We Are Direct Mail Experts'
+                    subtitle='resources'
+                    link='https://www.themailshark.com/resources/'
+                    padding
+                />
             </Margins>
                 <Grid>
                     {resources.map((resource, index) => 

@@ -79,7 +79,12 @@ export default function Products() {
     return (
         <section>
             <Margins>
-                <Heading title='Stand Out in the Mailbox' subtitle='Our products' padding />
+                <Heading
+                    title='Stand Out in the Mailbox'
+                    subtitle='Our products'
+                    link='https://www.themailshark.com/products/'
+                    padding
+                />
             </Margins>
             <SliderWrapper>
                     <div />

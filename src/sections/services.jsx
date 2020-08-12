@@ -71,7 +71,11 @@ export default function Services() {
     return (
         <section>
             <Margins>
-                <Heading title='Custom Direct Mail Solutions' subtitle='our services' padding/>
+                <Heading
+                    title='Custom Direct Mail Solutions'
+                    subtitle='our services'
+                    link='https://www.themailshark.com/direct-mailing-services/'
+                    padding/>
                 <Grid columns={3}>
                     <Service
                         title='Full-Service Mailings'
