@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Redesigning Mail Shark's Homepage
 
-## Available Scripts
+The planning, designing, and prototyping of a new, redesigned homepage for 2020.
 
-In the project directory, you can run:
+[Deployed code](https://beterry.github.io/ms-home/)
 
-### `npm start`
+[Full blog post](https://benterry.dev/work/ms-home/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Why redesign?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+In early 2020, Mail Shark’s homepage design was 3 years old. In the 3 years since the existing homepage went live, the marketing department (which included myself) made great progress with evolving Mail Shark’s brand to be a more focused and cohesive experience. The homepage of Mail Shark’s website was falling behind the brand.
 
-### `npm test`
+The existing homepage felt disconnected from the newer website pages: it was text heavy and used a disjointed combination of icon styles and photography. As UI/UX Designer at Mail Shark, I was responsible for planning, designing, and prototyping an updated homepage which would reflect Mail Shark’s brand in 2020.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Planning
 
-### `npm run build`
+### Stakeholder meeting
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I first meet with the President of Mail Shark, the Marketing VP, and the Creative Manager to discuss the goals, features, and tone of the new homepage. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+In short, the content on the existing page was adequate, however, it needed to be organized to include less text and include updated brand components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Goals
 
-### `npm run eject`
+1. Provide a concise description of the company and easily provide a way to learn more
+2. Show the user why Mail Shark is better than the competition
+3. Tie the brand together with a uniform, user-friendly, mobile accessible design
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Developing the prototype
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After the design was completed, I developed a prototype to further show the effectiveness of the new components, layout, and branding. Although Adobe XD has powerful prototyping features, I wanted to develop the prototype with web technology as coding practice.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Technology used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- React
+- Styled components
